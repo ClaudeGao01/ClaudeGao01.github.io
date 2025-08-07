@@ -7,9 +7,13 @@ redirect_from:
   - /about.html
 ---
 
-Hello! I'm Zeyu, a passionate lover of Media & Communication. Currently, I serve as a lecturer at [Department of Journalism, Yantai Institute of Technology](https://www.yitsd.edu.cn/). Before that, I earned my MSc with distinction from [Glasgow University Media Group (GUMG), University of Glasgow](https://www.gla.ac.uk/research/az/gumg/) and BA from [Yantai University](https://www.ytu.edu.cn/).
+Hello! I'm Zeyu, a passionate lover of Media & Communication. Currently, I serve as a lecturer at Department of Journalism, [Yantai Institute of Technology](https://www.yitsd.edu.cn/). Before that, I earned my MSc from [Glasgow University Media Group (GUMG)](https://www.gla.ac.uk/research/az/gumg/), University of Glasgow and my BA from [Yantai University](https://www.ytu.edu.cn/).
 
-My research interests include Human-Machine Communication and Computational Methods.
+I was fortunate to graduate with distinction with my Master's degree. Also, my undergraduate tuition was fully-funded by scholarships, such as China National Scholarship.
+
+My research interests include Human-Machine Communication and Computational Communication. I enjoy using quantitative methods (experiment, survey, SEM, NLP, big data, etc.). If you have any communication or cooperation intentions, please feel free to contact me via [email](gaozeyu01@sina.com).
+
  
-A data-driven personal website
+Beyond Research
 ======
+I interned at several tech companies, including internet, big data, telecommunications, etc. I also worked as a TV station director, debater, and student representative during my university years.
