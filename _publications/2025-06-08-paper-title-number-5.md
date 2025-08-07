@@ -4,8 +4,7 @@ collection: publications
 category: conferences
 permalink: /publication/2024-02-17-paper-title-number-4
 excerpt: 'Under review at, International Journal of Human-Computer Interaction$$'
-date: 2025-05
-venue: 'GitHub Journal of Bugs'
+venue: 'International Journal of Human-Computer Interaction'
 paperurl: 'http://academicpages.github.io/files/paper3.pdf'
 ---
 
