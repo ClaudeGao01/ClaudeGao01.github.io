@@ -11,7 +11,7 @@ Hello! I'm Zeyu, a passionate lover of Media & Communication. Currently, I serve
 
 I was fortunate to graduate with distinction with my Master's degree. Also, my undergraduate tuition was fully-funded by scholarships, such as China National Scholarship.
 
-My research interests include Human-Machine Communication and Computational Communication. I enjoy using quantitative methods (experiment, survey, SEM, NLP, big data, etc.). If you have any communication or cooperation intentions, please feel free to contact me via [email](gaozeyu01@sina.com).
+My research interests include Human-Machine Communication and Computational Communication. I enjoy using quantitative methods (experiment, survey, SEM, NLP, big data, etc.). If you have any communication or cooperation intentions, please feel free to contact me via e-mail (gaozeyu01@sina.com).
 
  
 Beyond Research
