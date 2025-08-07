@@ -37,7 +37,7 @@ author:
   instagram        : "claude_gao" # user_id
 
 # Publication Category - The following the list of publication categories and their headings
-publication_category:
+research_category:
 
 
 # Site Settings
@@ -173,7 +173,7 @@ collections:
   teaching:
     output: true
     permalink: /:collection/:path/
-  publications:
+  research:
     output: true
     permalink: /:collection/:path/
   portfolio:
@@ -216,7 +216,7 @@ defaults:
   # _publications
   - scope:
       path: ""
-      type: publications
+      type: research
     values:
       layout: single
       author_profile: true
