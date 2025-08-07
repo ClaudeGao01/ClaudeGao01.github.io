@@ -9,7 +9,7 @@
 
 main:
   - title: "Research & Study"
-    url: /publications/
+    url: /research/
 
   - title: "Practical Work"
     url: /portfolio/
