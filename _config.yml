@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Zeyu Gao"
+title                    : "ZeyuGao"
 title_separator          : "-"
 name                     : &name "Zeyu "Claude" Gao"
 description              : &description "This is a personal websitie of Zeyu Gao."
