@@ -1,7 +1,9 @@
-layout: archive
-permalink: /research/
+---
+permalink: /
 author_profile: true
-title: Research
+---
+
+Research
 ---
 **Gao, Z.** & Sang, Y. (under review). Do we like AI to show “thinking”? Revealing the effect of Chain-of-Thought on human perceptions.  
 
