@@ -1,6 +1,5 @@
 ---
 layout: archive
-title: "Portfolio"
 permalink: /practice/
 author_profile: true
 ---
