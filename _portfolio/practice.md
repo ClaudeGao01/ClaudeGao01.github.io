@@ -1,8 +1,3 @@
----
-permalink: /practice/
-author_profile: true
-title: ""
----
 Profession
 ---
 [**Yantai Institute of Technology**]('https://www.yitsd.edu.cn/')  
