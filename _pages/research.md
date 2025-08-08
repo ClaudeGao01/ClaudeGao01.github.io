@@ -20,8 +20,8 @@ Research
 Study Notes
 ---
 <a href="https://lv7w5nvrr9.feishu.cn/docx/DFmadtvlaoI4qYxjyQIc1y3enOe">Literature on emerging media & computational communication</a>  
-[Quantitative data analysis]("https://lv7w5nvrr9.feishu.cn/docx/GycidyhvDo3HPoxRuGpcFxtknSf")  
-[Computational communication methods]("https://lv7w5nvrr9.feishu.cn/docx/SmmBddmssoEIpExdIqNcSWyVnzc")
+<a href="https://lv7w5nvrr9.feishu.cn/docx/GycidyhvDo3HPoxRuGpcFxtknSf">Quantitative data analysis</a>  
+<a href="https://lv7w5nvrr9.feishu.cn/docx/SmmBddmssoEIpExdIqNcSWyVnzc">Computational communication methods</a>
 
 
 
