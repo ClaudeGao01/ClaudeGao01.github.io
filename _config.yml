@@ -223,12 +223,7 @@ defaults:
       share: true
       comments: true
   # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: true
+
   # _talks
   - scope:
       path: ""
