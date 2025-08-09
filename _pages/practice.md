@@ -1,6 +1,8 @@
+---
 permalink: /practice/
 author_profile: true
 ---
+
 Profession
 ---
 [**Yantai Institute of Technology**]('https://www.yitsd.edu.cn/')  
