@@ -1,8 +1,10 @@
 ---
+layout: single
 title: ''
 permalink: /practice/
 author_profile: true
 header: false
+show_title: false
 ---
 
 Profession
