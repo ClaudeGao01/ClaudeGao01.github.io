@@ -1,6 +1,7 @@
 ---
 permalink: /practice/
 author_profile: true
+show_title: false
 ---
 
 Profession
