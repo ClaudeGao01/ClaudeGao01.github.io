@@ -8,4 +8,4 @@ redirect_from:
 ---
 
 
-[You can download my CV here.](files/Zeyu-CV.pdf)
+[You can download my CV here.](../files/Zeyu-CV.pdf)
