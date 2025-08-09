@@ -1,7 +1,8 @@
 ---
+title: ''
 permalink: /practice/
 author_profile: true
-show_title: false
+header: false
 ---
 
 Profession
