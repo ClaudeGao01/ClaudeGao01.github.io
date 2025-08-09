@@ -1,5 +1,3 @@
-aaaa
-
 ---
 layout: single
 title: ''
@@ -8,7 +6,6 @@ author_profile: true
 header: false
 show_title: false
 ---
-
 Profession
 ---
 [**Yantai Institute of Technology**]('https://www.yitsd.edu.cn/')  
