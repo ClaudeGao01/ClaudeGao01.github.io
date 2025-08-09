@@ -1,6 +1,7 @@
 ---
 permalink: /research/
 author_profile: true
+title: "Research & Study"
 ---
 
 I'm interested in Human-Machine Communication and Computational Communication. To specify, I'm curious about three major questions:  
