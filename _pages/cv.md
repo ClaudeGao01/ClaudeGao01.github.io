@@ -7,5 +7,5 @@ redirect_from:
   - /resume
 ---
 
-{% include base_path %}
-[You can download my CV here.]('files/Zeyu-CV.pdf').
+
+[You can download my CV here.]('files/Zeyu-CV.pdf')
