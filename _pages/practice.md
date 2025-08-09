@@ -7,7 +7,7 @@ author_profile: true
 Profession
 ---
 [**Yantai Institute of Technology**]('https://www.yitsd.edu.cn/')  
-2025.2-Now, Lecturer of Journalism  
+2025.2-Now, Lecturer of Media & Communication  
 Teaching: Introduction to Journalism & Communication, Media Convergence, News Commentary, etc.  
 
 Internships
