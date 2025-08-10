@@ -6,7 +6,7 @@ author_profile: true
 ---
 Profession
 ---
-[**Yantai Institute of Technology**]('https://www.yitsd.edu.cn/')  
+[**Yantai Institute of Technology**](https://www.yitsd.edu.cn/)  
 2025.2-Now, Lecturer of Media & Communication  
 Teaching: Introduction to Journalism & Communication, Media Convergence, News Commentary, etc.  
 
@@ -15,10 +15,10 @@ Internships
 **Shandong Kai'Tai Telecommunications Co., Ltd.**  
 2023.2-5, Media Intern  
 
-[**People's Daily Public Opinion Data Center**]('https://www.peopleonline.cn/')  
+[**People's Daily Public Opinion Data Center**](https://www.peopleonline.cn/)  
 2022.2-6, Product Intern
 
-[**ByteDance Ltd.**]('https://www.bytedance.com/en/')  
+[**ByteDance Ltd.**](https://www.bytedance.com/en/)  
 2021.7-9, Brand Intern
 
 Creative Work
