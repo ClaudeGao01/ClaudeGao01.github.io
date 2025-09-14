@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek聊天机器人</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 90vh;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .header-subtitle {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .chat-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .user-message {
+            align-self: flex-end;
+            background: #0066ff;
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+        
+        .bot-message {
+            align-self: flex-start;
+            background: #e9ecef;
+            color: #333;
+            border-bottom-left-radius: 4px;
+            position: relative;
+        }
+        
+        .rating-container {
+            display: flex;
+            justify-content: flex-start;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 8px 0;
+            flex-wrap: wrap;
+        }
+        
+        .rating-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            background: white;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .rating-btn:hover {
+            transform: scale(1.1);
+            background: #f0f0f0;
+        }
+        
+        .rated {
+            background: #333;
+            color: white;
+            border-color: #333;
+        }
+        
+        .rating-label {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            font-size: 10px;
+            color: #666;
+            font-weight: normal;
+        }
+        
+        .input-container {
+            padding: 16px 20px;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            gap: 12px;
+        }
+        
+        input {
+            flex: 1;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 24px;
+            font-size: 16px;
+            outline: none;
+            transition: border 0.3s;
+        }
+        
+        input:focus {
+            border-color: #4b6cb7;
+        }
+        
+        button {
+            padding: 14px 24px;
+            background: #4b6cb7;
+            color: white;
+            border: none;
+            border-radius: 24px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+        
+        button:hover {
+            background: #395694;
+            transform: scale(1.05);
+        }
+        
+        .export-btn {
+            background: #28a745;
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .export-btn:hover {
+            background: #218838;
+        }
+        
+        .api-key-container {
+            padding: 12px 20px;
+            background: #f1f3f5;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            gap: 12px;
+        }
+        
+        .api-key-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .info-text {
+            text-align: center;
+            padding: 10px;
+            color: #6c757d;
+            font-size: 14px;
+        }
+        
+        .timestamp {
+            font-size: 12px;
+            color: #6c757d;
+            margin-top: 4px;
+            text-align: right;
+        }
+        
+        .thinking-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #6c757d;
+            font-style: italic;
+        }
+        
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top-color: #4b6cb7;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .rating-feedback {
+            font-size: 12px;
+            color: #28a745;
+            margin-top: 8px;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                height: 95vh;
+                width: 95%;
+            }
+            
+            .message {
+                max-width: 90%;
+            }
+            
+            .input-container {
+                flex-direction: column;
+            }
+            
+            .export-btn {
+                margin-left: 0;
+            }
+            
+            .rating-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+            
+            .rating-label {
+                font-size: 9px;
+                top: -22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-robot"></i> DeepSeek聊天机器人</h1>
+            <p class="header-subtitle">与AI交流并为它的回复评分</p>
+        </header>
+        
+        <div class="api-key-container">
+            <input type="password" class="api-key-input" id="apiKey" placeholder="输入您的DeepSeek API密钥">
+            <button id="saveApiKey">保存密钥</button>
+        </div>
+        
+        <div class="chat-container" id="chatContainer">
+            <div class="message bot-message">
+                <div>您好！我是DeepSeek聊天机器人。请提供您的API密钥开始聊天。</div>
+                <div class="timestamp" id="timestamp">刚刚</div>
+            </div>
+        </div>
+        
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="输入您的消息..." disabled>
+            <button id="sendBtn" disabled><i class="fas fa-paper-plane"></i> 发送</button>
+            <button class="export-btn" id="exportBtn"><i class="fas fa-download"></i> 导出聊天记录</button>
+        </div>
+        
+        <div class="info-text">
+            每条机器人回复后，您可以使用1-7分为其评分，所有记录会自动保存
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatContainer = document.getElementById('chatContainer');
+            const userInput = document.getElementById('userInput');
+            const sendBtn = document.getElementById('sendBtn');
+            const exportBtn = document.getElementById('exportBtn');
+            const apiKeyInput = document.getElementById('apiKey');
+            const saveApiKeyBtn = document.getElementById('saveApiKey');
+            
+            let apiKey = '';
+            let chatHistory = [];
+            
+            // 尝试从localStorage加载聊天记录
+            const savedHistory = localStorage.getItem('deepseekChatHistory');
+            if (savedHistory) {
+                chatHistory = JSON.parse(savedHistory);
+                renderChatHistory();
+            }
+            
+            // 保存API密钥
+            saveApiKeyBtn.addEventListener('click', function() {
+                apiKey = apiKeyInput.value.trim();
+                if (apiKey) {
+                    userInput.disabled = false;
+                    sendBtn.disabled = false;
+                    addMessage('API密钥已保存。您现在可以开始聊天了！', 'bot');
+                    apiKeyInput.type = 'password';
+                } else {
+                    addMessage('请输入有效的API密钥。', 'bot');
+                }
+            });
+            
+            // 发送消息
+            sendBtn.addEventListener('click', sendMessage);
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            // 导出聊天记录
+            exportBtn.addEventListener('click', exportChatHistory);
+            
+            function sendMessage() {
+                const message = userInput.value.trim();
+                if (!message) return;
+                
+                addMessage(message, 'user');
+                userInput.value = '';
+                
+                // 调用DeepSeek API
+                callDeepSeekApi(message);
+            }
+            
+            function addMessage(text, sender) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message');
+                messageElement.classList.add(sender + '-message');
+                
+                const messageContent = document.createElement('div');
+                messageContent.textContent = text;
+                
+                const timestamp = document.createElement('div');
+                timestamp.classList.add('timestamp');
+                timestamp.textContent = getCurrentTime();
+                
+                messageElement.appendChild(messageContent);
+                messageElement.appendChild(timestamp);
+                
+                if (sender === 'bot') {
+                    const ratingContainer = document.createElement('div');
+                    ratingContainer.classList.add('rating-container');
+                    
+                    for (let i = 1; i <= 7; i++) {
+                        const ratingBtn = document.createElement('button');
+                        ratingBtn.classList.add('rating-btn');
+                        
+                        const numberSpan = document.createElement('span');
+                        numberSpan.textContent = i;
+                        ratingBtn.appendChild(numberSpan);
+                        
+                        // 添加评分标签（在按钮上方）
+                        if (i === 1) {
+                            const label = document.createElement('span');
+                            label.classList.add('rating-label');
+                            label.textContent = '很不满意';
+                            ratingBtn.appendChild(label);
+                        } else if (i === 4) {
+                            const label = document.createElement('span');
+                            label.classList.add('rating-label');
+                            label.textContent = '一般';
+                            ratingBtn.appendChild(label);
+                        } else if (i === 7) {
+                            const label = document.createElement('span');
+                            label.classList.add('rating-label');
+                            label.textContent = '很满意';
+                            ratingBtn.appendChild(label);
+                        }
+                        
+                        ratingBtn.addEventListener('click', function() {
+                            rateResponse(i, text, ratingContainer);
+                        });
+                        ratingContainer.appendChild(ratingBtn);
+                    }
+                    
+                    messageElement.appendChild(ratingContainer);
+                }
+                
+                chatContainer.appendChild(messageElement);
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+                
+                // 保存到聊天历史
+                chatHistory.push({
+                    sender: sender,
+                    text: text,
+                    timestamp: new Date().toISOString(),
+                    rating: sender === 'bot' ? null : undefined
+                });
+                
+                localStorage.setItem('deepseekChatHistory', JSON.stringify(chatHistory));
+            }
+            
+            function rateResponse(rating, responseText, ratingContainer) {
+                // 移除所有已评分的样式
+                const buttons = ratingContainer.querySelectorAll('.rating-btn');
+                buttons.forEach(btn => {
+                    btn.classList.remove('rated');
+                });
+                
+                // 为当前评分按钮添加样式
+                event.currentTarget.classList.add('rated');
+                
+                // 更新聊天历史中的评分
+                for (let i = chatHistory.length - 1; i >= 0; i--) {
+                    if (chatHistory[i].sender === 'bot' && chatHistory[i].text === responseText) {
+                        chatHistory[i].rating = rating;
+                        break;
+                    }
+                }
+                
+                localStorage.setItem('deepseekChatHistory', JSON.stringify(chatHistory));
+                
+                // 移除之前的评分反馈（如果存在）
+                const existingFeedback = ratingContainer.querySelector('.rating-feedback');
+                if (existingFeedback) {
+                    existingFeedback.remove();
+                }
+                
+                // 添加新的评分反馈
+                const feedback = document.createElement('div');
+                feedback.classList.add('rating-feedback');
+                feedback.textContent = `感谢您的评分：${rating}分`;
+                ratingContainer.appendChild(feedback);
+            }
+            
+            async function callDeepSeekApi(userMessage) {
+                // 显示思考中的指示器
+                const thinkingIndicator = document.createElement('div');
+                thinkingIndicator.classList.add('message', 'bot-message');
+                thinkingIndicator.innerHTML = `
+                    <div class="thinking-indicator">
+                        <div class="spinner"></div>
+                        <div>思考中...</div>
+                    </div>
+                `;
+                chatContainer.appendChild(thinkingIndicator);
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+                
+                try {
+                    // 构建消息历史，确保包含上下文
+                    const messages = [];
+                    
+                    // 添加系统消息（可选）
+                    messages.push({
+                        role: "system",
+                        content: "你是一个有帮助的AI助手。"
+                    });
+                    
+                    // 添加对话历史（排除评分信息）
+                    chatHistory.forEach(msg => {
+                        if (msg.sender === 'user') {
+                            messages.push({
+                                role: "user",
+                                content: msg.text
+                            });
+                        } else if (msg.sender === 'bot') {
+                            messages.push({
+                                role: "assistant",
+                                content: msg.text
+                            });
+                        }
+                    });
+                    
+                    // 添加当前用户消息
+                    messages.push({
+                        role: "user",
+                        content: userMessage
+                    });
+                    
+                    // 构建API请求
+                    const response = await fetch('https://api.deepseek.com/v1/chat/completions', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${apiKey}`
+                        },
+                        body: JSON.stringify({
+                            model: "deepseek-chat",
+                            messages: messages,
+                            temperature: 0.7,
+                            max_tokens: 2000,
+                            stream: false
+                        })
+                    });
+                    
+                    const data = await response.json();
+                    
+                    // 移除思考指示器
+                    chatContainer.removeChild(thinkingIndicator);
+                    
+                    if (data.choices && data.choices.length > 0) {
+                        const botResponse = data.choices[0].message.content;
+                        addMessage(botResponse, 'bot');
+                    } else {
+                        addMessage('抱歉，我没有得到有效的回复。', 'bot');
+                    }
+                } catch (error) {
+                    console.error('API调用失败:', error);
+                    // 移除思考指示器
+                    chatContainer.removeChild(thinkingIndicator);
+                    addMessage('调用API时出错，请检查您的API密钥和网络连接。', 'bot');
+                }
+            }
+            
+            function renderChatHistory() {
+                chatContainer.innerHTML = '';
+                
+                chatHistory.forEach(msg => {
+                    const messageElement = document.createElement('div');
+                    messageElement.classList.add('message');
+                    messageElement.classList.add(msg.sender + '-message');
+                    
+                    const messageContent = document.createElement('div');
+                    messageContent.textContent = msg.text;
+                    
+
+                    messageElement.appendChild(messageContent);
+                    messageElement.appendChild(timestamp);
+                    
+                    if (msg.sender === 'bot' && msg.rating !== undefined) {
+                        const ratingContainer = document.createElement('div');
+                        ratingContainer.classList.add('rating-container');
+                        
+                        for (let i = 1; i <= 7; i++) {
+                            const ratingBtn = document.createElement('button');
+                            ratingBtn.classList.add('rating-btn');
+                            
+                            const numberSpan = document.createElement('span');
+                            numberSpan.textContent = i;
+                            ratingBtn.appendChild(numberSpan);
+                            
+                            // 添加评分标签（在按钮上方）
+                            if (i === 1) {
+                                const label = document.createElement('span');
+                                label.classList.add('rating-label');
+                                label.textContent = '很不满意';
+                                ratingBtn.appendChild(label);
+                            } else if (i === 4) {
+                                const label = document.createElement('span');
+                                label.classList.add('rating-label');
+                                label.textContent = '一般';
+                                ratingBtn.appendChild(label);
+                            } else if (i === 7) {
+                                const label = document.createElement('span');
+                                label.classList.add('rating-label');
+                                label.textContent = '很满意';
+                                ratingBtn.appendChild(label);
+                            }
+                            
+                            if (msg.rating === i) {
+                                ratingBtn.classList.add('rated');
+                            }
+                            
+                            ratingBtn.addEventListener('click', function() {
+                                rateResponse(i, msg.text, ratingContainer);
+                            });
+                            ratingContainer.appendChild(ratingBtn);
+                        }
+                        
+                        if (msg.rating !== null) {
+                            const feedback = document.createElement('div');
+                            feedback.classList.add('rating-feedback');
+                            feedback.textContent = `已评分：${msg.rating}分`;
+                            ratingContainer.appendChild(feedback);
+                        }
+                        
+                        messageElement.appendChild(ratingContainer);
+                    }
+                    
+                    chatContainer.appendChild(messageElement);
+                });
+                
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+            
+            function exportChatHistory() {
+                const dataStr = JSON.stringify(chatHistory, null, 2);
+                const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+                
+                const exportFileDefaultName = 'deepseek_chat_history.json';
+                
+                const linkElement = document.createElement('a');
+                linkElement.setAttribute('href', dataUri);
+                linkElement.setAttribute('download', exportFileDefaultName);
+                linkElement.click();
+            }
+            
+            function getCurrentTime() {
+                const now = new Date();
+                return now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            }
+            
+            function formatTime(timestamp) {
+                const date = new Date(timestamp);
+                return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            }
+        });
+    </script>
+</body>
+</html>
