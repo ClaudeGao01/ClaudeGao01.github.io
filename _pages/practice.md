@@ -7,8 +7,10 @@ author_profile: true
 Profession
 ---
 [**Yantai Institute of Technology**](https://www.yitsd.edu.cn/)  
-2025.2-Now, Lecturer of Journalism  
-Teaching: Introduction to Journalism & Communication, Research Methods in Communication Studies, Digital Media Technology, etc.  
+2025.2-Now, Lecturer of Journalism
+
+Teaching: Introduction to Journalism & Communication, Research Methods in Communication Studies, Digital Media Technology, etc.
+
 In the spring of 2026, I will supervise 8 bright and cute undergraduate students in completing their graduation theses. Their research topics include Human-Machine Communication, virtual influencer, AI in journalism, algorithm, etc.
 
 Internships
@@ -17,7 +19,7 @@ Internships
 2023.2-5, Media Intern  
 
 [**People's Daily Public Opinion Data Center**](https://www.peopleonline.cn/)  
-2022.2-6, Product Intern
+2022.2-6, Product & Customer Relations Intern
 
 [**ByteDance Ltd.**](https://www.bytedance.com/en/)  
 2021.7-9, Brand Intern
