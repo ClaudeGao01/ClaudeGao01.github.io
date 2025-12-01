@@ -7,8 +7,9 @@ author_profile: true
 Profession
 ---
 [**Yantai Institute of Technology**](https://www.yitsd.edu.cn/)  
-2025.2-Now, Lecturer of Media & Communication  
-Teaching: Introduction to Journalism & Communication, Media Convergence, News Commentary, etc.  
+2025.2-Now, Lecturer of Journalism
+Teaching: Introduction to Journalism & Communication, Research Methods in Communication Studies, Digital Media Technology, etc. 
+In the spring of 2026, I will supervise eight bright and cute undergraduate students in completing their graduation theses. Their research topics include Human-Machine Communication, virtual influencer, AI in journalism, algorithm, etc.
 
 Internships
 ---
