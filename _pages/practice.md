@@ -1,6 +1,6 @@
 ---
 layout: single
-title: 'Practical Work'
+title: 'Teaching & Practice'
 permalink: /practice/
 author_profile: true
 ---
