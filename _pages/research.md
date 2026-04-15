@@ -13,7 +13,7 @@ Interestingly, although I was taught by a university known for its [qualitative 
 
 Research Work
 ---
-**Gao, Z.** & Sang, Y. (accepted). Do we like AI to show “thinking”? Revealing the effect of Chain-of-Thought on human perceptions. *International Journal of Human-Computer Interaction*
+**Gao, Z.** & Sang, Y. (2026). Do we like AI to show “thinking”? Revealing the effect of Chain-of-Thought on human perceptions. *International Journal of Human-Computer Interaction*, 1–21. https://doi.org/10.1080/10447318.2026.2655929
 
 **Gao, Z.** (2025). “Guys, look what ChatGPT said!” A study of social media sharing of communication with bots. *The 75th International Communication Association Annual Conference*, Denver, CO, USA.
 
