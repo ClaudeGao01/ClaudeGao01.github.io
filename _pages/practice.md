@@ -8,11 +8,13 @@ Academic Appointments
 ---
 [**University of Connecticut**](https://www.yitsd.edu.cn/)  
 2026.9-present, Teaching Assistant
+
 Teaching: *Principles of Public Speaking*
 
 
 [**Yantai Institute of Technology**](https://www.yitsd.edu.cn/)  
 2025.2-2026.7, Lecturer of Journalism
+
 Teaching: *Introduction to Journalism & Communication*, *Research Methods in Communication Studies*, *Digital Media Technology*, etc.
 
 In the spring of 2026, I supervised 8 bright and cute undergraduate students in completing their graduation theses. Their research topics included Human-Machine Communication, virtual influencer, AI in journalism, algorithm, etc.
