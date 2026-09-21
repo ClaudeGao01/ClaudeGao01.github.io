@@ -4,10 +4,16 @@ title: 'Teaching & Practice'
 permalink: /practice/
 author_profile: true
 ---
-Profession
+Academic Appointments
 ---
+[**University of Connecticut**](https://www.yitsd.edu.cn/)  
+2026.9-present, Teaching Assistant
+
+Teaching: *Principles of Public Speaking*
+
+
 [**Yantai Institute of Technology**](https://www.yitsd.edu.cn/)  
-2025.2-Now, Lecturer of Journalism
+2025.2-2026.7, Lecturer of Journalism
 
 Teaching: *Introduction to Journalism & Communication*, *Research Methods in Communication Studies*, *Digital Media Technology*, etc.
 
