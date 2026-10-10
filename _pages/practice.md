@@ -6,7 +6,7 @@ author_profile: true
 ---
 Academic Appointments
 ---
-[**University of Connecticut**](https://www.yitsd.edu.cn/)  
+[**University of Connecticut**](https://communication.uconn.edu/)  
 2026.9-present, Teaching Assistant
 
 Teaching: *Principles of Public Speaking*
